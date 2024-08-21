@@ -31,7 +31,7 @@ jobs:
 
       - name: Test and Deploy
         run: |
-          npm test -- --watch=false --browsers=ChromeHeadlessNoSandbox
+          npm test --watch=false --browsers=ChromeHeadlessNoSandbox
           ng serve
           echo "Version: ${{ inputs.version }}"
           # Add your Angular deployment commands here
