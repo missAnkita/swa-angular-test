@@ -1,7 +1,7 @@
 name: Deploy Angular Application
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       version:
         description: 'The version to deploy'
