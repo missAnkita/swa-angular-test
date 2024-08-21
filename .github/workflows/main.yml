@@ -32,8 +32,13 @@ jobs:
       - name: Test and Deploy
         run: |
           npm test -- --watch=false --browsers=ChromeHeadlessNoSandbox
-          npm run serve
           echo "Version: ${{ inputs.version }}"
           # Add your Angular deployment commands here
      #   env:
      #     DEPLOYMENT_SECRET: ${{ secrets.DEPLOYMENT_SECRET }}
+     
+      - name: upload-artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-artifacts
+          path: 'dist/hello-world-app'
