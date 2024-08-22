@@ -1,0 +1,17 @@
+name: Caller WF AZ functions code
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  
+jobs:
+  all:
+      name: Call Azure Functions WF
+      uses: missAnkita/Reusable-Workflows/.github/workflows/super-linter-resuable-wf.yml@feature/test-sprinter
+      with:
+        runs-on: ubuntu-latest
+        run-tests: false
+        working-directory: .
+      secrets: inherit
